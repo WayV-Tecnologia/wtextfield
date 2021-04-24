@@ -1,0 +1,28 @@
+<html>
+<head>
+	<link rel="stylesheet" href="wtextfield.css">
+	<script src="wtextfield.js"></script>
+</head>
+<body>
+	<input type="text" name="test" id="test-text" value="test" />
+</body>
+
+
+
+<script>
+	document.addEventListener('DOMContentLoaded', function() {
+		textField = new WTextField(document.getElementById("test-text"), {
+			width: "250px",
+			fontSize: "14px",
+			fontFamily: "Courier",
+			onBlur: (el) => {
+				el.display = "[" + el.value + "]"
+			},
+			onSetup: (el) => {
+				el.display = "[" + el.value + "]"
+			}
+		});
+		// console.log(textField);
+	}, false);
+</script>
+</html>
